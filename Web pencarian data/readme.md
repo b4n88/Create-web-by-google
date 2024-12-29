@@ -6,7 +6,7 @@ Terfikirkan oleh saya, jika menggunakan excel otomatis bisa dibuka, kalau spread
 
 Jadi saya akan membuatkan web yang memunculkan data spesifik saja sesuai kebutuhan user.. contohnya seperti ini..
 
-![Contoh web](Web pencarian data/CONTOH WEB.jpeg)
+![Contoh web](https://github.com/b4n88/Create-web-by-google/blob/main/Web%20pencarian%20data/CONTOH%20WEB.jpeg)
 
 Adupun membuatnya karena saya tidak bisa koding dengan level 15 ayam geprek kakak saya, saya membutuhkan tools :
 - Google sheet > untuk jenis datanya
