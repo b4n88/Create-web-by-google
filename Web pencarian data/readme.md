@@ -21,7 +21,7 @@ Alur pembuatanya adalah membuat 2 file:
 
   index.html ini sebagai membuat dan membangun tampilan web. Membuat letak, mengatur warna, menambah interaktif.
 
-  ![Tampilan gambar](Web pencarian data/tampilan web.png)
+  ![Tampilan gambar](https://github.com/b4n88/Create-web-by-google/blob/main/Web%20pencarian%20data/tampilan%20web.png)
 
   Setelah sudah ada langsung dideploy aja nanti akan dikasih link untuk melihat web tersebut..
 
