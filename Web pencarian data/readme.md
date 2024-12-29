@@ -6,6 +6,8 @@ Terfikirkan oleh saya, jika menggunakan excel otomatis bisa dibuka, kalau spread
 
 Jadi saya akan membuatkan web yang memunculkan data spesifik saja sesuai kebutuhan user.. contohnya seperti ini..
 
+https://script.google.com/macros/s/AKfycbzrHt_R1HLXgKZ8zfTRYeJ-BCnM6Kwh9HGTJlhyZA1PcEsKh4iSWvYMR30ex6i4sw5SwQ/exec
+
 ![Contoh web](https://github.com/b4n88/Create-web-by-google/blob/main/Web%20pencarian%20data/CONTOH%20WEB.jpeg)
 
 Adupun membuatnya karena saya tidak bisa koding dengan level 15 ayam geprek kakak saya, saya membutuhkan tools :
