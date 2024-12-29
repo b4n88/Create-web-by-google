@@ -1,0 +1,116 @@
+<html>
+  <head>
+    <base target="_top">
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      .form-container {
+        margin: 50px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        background-color: #f7f7f7;
+      }
+      input[type="text"], input[type="submit"] {
+        width: 100%;
+        padding: 8px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+      /* Mengubah warna tombol Cek Data menjadi biru */
+      input[type="submit"] {
+        background-color: #007BFF; /* Warna biru */
+        color: white; /* Teks putih */
+        cursor: pointer;
+      }
+      input[type="submit"]:hover {
+        background-color: #0056b3; /* Warna biru yang lebih gelap saat di-hover */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Mengubah tagline menjadi Cari Data Pulsa Toko -->
+    <div class="form-container">
+      <h2>Cari Data Pulsa Toko Indomaret Kendari</h2>
+      <form id="searchForm">
+        <label for="kodeToko">Kode Toko</label>
+        <input type="text" id="kodeToko" name="KODE TOKO" placeholder="Masukan dengan huruf kapital, KRI dan BAU">
+        <input type="submit" value="Cek Data">
+      </form>
+    </div>
+
+    <!-- Menampilkan konfirmasi sebelum memproses data -->
+    <div id="confirmation" style="display:none; margin-top: 20px;">
+      <p>Apakah kode toko sudah sesuai?</p>
+      <button id="yesButton">Yes</button>
+      <button id="noButton">No</button>
+    </div>
+
+    <!-- Menampilkan pesan loading -->
+    <div id="loading" style="display:none; font-weight: bold;">Loading... </div>
+    <!-- Tempat hasil pencarian akan muncul -->
+    <div id="result"></div>
+
+    <script>
+      // Menampilkan konfirmasi setelah klik tombol "Cek Data"
+      document.getElementById('searchForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        // Ambil nilai kode toko dari input
+        var kodeToko = document.getElementById('kodeToko').value;
+
+        // Cek apakah input kode toko diisi
+        if (kodeToko === "") {
+          alert("Silakan masukkan kode toko terlebih dahulu.");
+          return;
+        }
+
+        // Menampilkan konfirmasi apakah kode toko sudah benar
+        document.getElementById('confirmation').style.display = 'block';
+
+        // Menyembunyikan hasil sebelumnya jika ada
+        document.getElementById('result').innerHTML = '';
+      });
+
+      // Fungsi untuk tombol "Yes" dan "No"
+      document.getElementById('yesButton').addEventListener('click', function() {
+        // Menyembunyikan konfirmasi
+        document.getElementById('confirmation').style.display = 'none';
+
+        // Menampilkan pesan "Loading..." saat proses pencarian data dimulai
+        document.getElementById('loading').style.display = 'block';
+
+        // Panggil Google Apps Script untuk cek data
+        google.script.run.withSuccessHandler(function(data) {
+          var resultDiv = document.getElementById('result');
+          var loadingDiv = document.getElementById('loading');
+
+          // Sembunyikan pesan "Loading..." setelah data diterima
+          loadingDiv.style.display = 'none';
+
+          // Menampilkan data yang ditemukan
+          if (data.length > 0) {
+            var html = '<h3>Data untuk Toko: ' + data[0] + '</h3>';
+            html += '<table border="1"><tr><th>JAN</th><th>FEB</th><th>MAR</th><th>APR</th><th>MEI</th><th>JUN</th><th>JUL</th><th>AGU</th><th>SEP</th><th>OKT</th><th>NOV</th><th>DES</th></tr>';
+            html += '<tr>';
+            for (var i = 2; i < data.length; i++) {
+              html += '<td>' + data[i] + '</td>';
+            }
+            html += '</tr></table>';
+            resultDiv.innerHTML = html;
+          } else {
+            resultDiv.innerHTML = '<p>Toko tidak ditemukan.</p>';
+          }
+        }).getDataByKodeToko(document.getElementById('kodeToko').value);
+      });
+
+      document.getElementById('noButton').addEventListener('click', function() {
+        alert('Silakan periksa kembali kode toko Anda.');
+        document.getElementById('confirmation').style.display = 'none';
+      });
+    </script>
+  </body>
+</html>
