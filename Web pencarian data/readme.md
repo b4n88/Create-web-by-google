@@ -6,3 +6,23 @@ Terfikirkan oleh saya, jika menggunakan excel otomatis bisa dibuka, kalau spread
 
 Jadi saya akan membuatkan web yang memunculkan data spesifik saja sesuai kebutuhan user.. contohnya seperti ini..
 
+![Contoh web](Web pencarian data/CONTOH WEB.jpeg)
+
+Adupun membuatnya karena saya tidak bisa koding dengan level 15 ayam geprek kakak saya, saya membutuhkan tools :
+- Google sheet > untuk jenis datanya
+- Chat Gpt > Pembuat code
+- Script.google untuk membuat webnya
+
+Alur pembuatanya adalah membuat 2 file:
+- File.gs
+- index.html
+
+  file.gs ini akan dijadikan sebagai penghubung antara script dengan  data yang akan ditampilkan dalam web.
+
+  index.html ini sebagai membuat dan membangun tampilan web. Membuat letak, mengatur warna, menambah interaktif.
+
+  ![Tampilan gambar](Web pencarian data/tampilan web.png)
+
+  Setelah sudah ada langsung dideploy aja nanti akan dikasih link untuk melihat web tersebut..
+
+  Sekian dan terima kasih
